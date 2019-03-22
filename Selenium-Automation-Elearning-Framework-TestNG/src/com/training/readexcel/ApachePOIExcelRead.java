@@ -32,6 +32,7 @@ public class ApachePOIExcelRead {
 
 			// Get first/desired sheet from the workbook
 			XSSFSheet sheet = workbook.getSheetAt(0);
+			//XSSFSheet sheet = workbook.getSheet(sheetname);
 			
 			int rowTotal = sheet.getLastRowNum();
 
@@ -89,7 +90,7 @@ public class ApachePOIExcelRead {
 	}
 
 	public static void main(String[] args) {
-		String fileName = "C:/Users/Naveen/Desktop/Testing.xlsx";
+		String fileName = "C:\\project-framework\\Testing.xlsx";
 		
 		for(String [] temp : new ApachePOIExcelRead().getExcelContent(fileName)){
 			for(String  tt : temp){
