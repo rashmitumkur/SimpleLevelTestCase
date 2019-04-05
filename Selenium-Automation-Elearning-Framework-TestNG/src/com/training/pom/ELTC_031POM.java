@@ -16,12 +16,45 @@ public class ELTC_031POM {
 
 	// TO verify whether application allows user to get registered as Student
 	// 1. Click on Sign Up! link
+	
+	/*since sign up link is removed from the web page, modifying the code.
 	@FindBy(xpath = "//a[contains(text(),'Sign up!')]")
 	private WebElement signUp;
 
 	public void clicksignUpBtn() {
 		this.signUp.click();
-	}
+	}*/
+	// Logging in
+		@FindBy(id = "login")
+		private WebElement userName;
+
+		@FindBy(id = "password")
+		private WebElement password;
+
+		@FindBy(id = "formLogin_submitAuth")
+		private WebElement loginBtn;
+
+		public void sendUserName(String userName) {
+			this.userName.clear();
+			this.userName.sendKeys(userName);
+		}
+
+		public void sendPassword(String password) {
+			this.password.clear();
+			this.password.sendKeys(password);
+		}
+
+		public void clickLoginBtn() {
+			this.loginBtn.click();
+		}
+		
+		//Click on 'Add User'
+		@FindBy(xpath = "//a[contains(text(),'Add a user')]")
+		private WebElement addUserLink;
+		
+		public void clickAddUserLink() {
+			this.addUserLink.click();
+		}
 
 	// 2. Enter valid credential in First name textbox
 	@FindBy(id = "registration_firstname")
@@ -52,20 +85,20 @@ public class ELTC_031POM {
 
 	// 5. Enter valid credential in username textbox
 	@FindBy(id = "username")
-	private WebElement userName;
+	private WebElement userNameTwo;
 
-	public void sendUserName(String userName) {
-		this.userName.clear();
-		this.userName.sendKeys(userName);
+	public void sendUserNameTwo(String userNameTwo) {
+		this.userNameTwo.clear();
+		this.userNameTwo.sendKeys(userNameTwo);
 	}
 
 	// 6. Enter valid credential in pass textbox
 	@FindBy(id = "pass1")
-	private WebElement password;
+	private WebElement password1;
 
-	public void sendPassword(String password) {
-		this.password.clear();
-		this.password.sendKeys(password);
+	public void sendPassword1(String password1) {
+		this.password1.clear();
+		this.password1.sendKeys(password1);
 	}
 
 	// 7. Enter valid credential in confirm password textbox

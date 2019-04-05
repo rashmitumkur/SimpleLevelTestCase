@@ -17,7 +17,7 @@ import com.training.pom.ELTC_031aPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class ELTC_091Tests {
+public class ELTC_092Tests {
 
 	private WebDriver driver;
 	private String baseUrl;
@@ -50,7 +50,7 @@ public class ELTC_091Tests {
 		driver.quit();
 	}
 
-	@Test(dataProvider = "excel-inputs", dataProviderClass = LoginDataProviders.class)
+	@Test(dataProvider = "excel-inputs1", dataProviderClass = LoginDataProviders.class)
 	public void registrationTest(String userName, String password, String firstName, String lastName, String email,
 			String userNameTwo, String passwordTwo, String phone, String language, String profile) {
 		// Login page will open
@@ -85,18 +85,15 @@ public class ELTC_091Tests {
 		// 10. Student radio button in Profile should get selected
 		ELTC_031aPOM.selectProfile(profile);
 
-		screenShot.captureScreenShot("ELTC_031a_Screen1");
+		screenShot.captureScreenShot("ELTC_092_Screen1");
 
-		// 11.Dear, Your personal settings have been registered.An email has been sent
-		// to help you remember your login and password.
-		// You can now select, in the list, the course you want access to. Message
-		// should get displayed
+		// 11. Error message should get displayed
 		ELTC_031aPOM.clickRegistrationSubmitBtn();
 
-		Assert.assertEquals("Your personal settings have been registered",
-				"Your personal settings have been registered");
+		Assert.assertEquals("The email address is not complete or contains some invalid characters",
+				"The email address is not complete or contains some invalid characters");
 
-		screenShot.captureScreenShot("ELTC_91_Screen1");
+		screenShot.captureScreenShot("ELTC_92_Screen1");
 
 	}
 }

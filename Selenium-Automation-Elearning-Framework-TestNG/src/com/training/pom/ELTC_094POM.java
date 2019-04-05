@@ -7,11 +7,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class ELTC_061POM {
+public class ELTC_094POM {
 
 	private WebDriver driver;
 
-	public ELTC_061POM(WebDriver driver) {
+	public ELTC_094POM(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -282,5 +282,112 @@ public class ELTC_061POM {
 
 	public void clickCourseDescriptionSubmitBtn3() {
 		this.courseDescriptionSubmit3.click();
+	}
+	
+		
+	//25.click on Course catalog
+	@FindBy(id = "//a[contains(text(),'Course catalog')]")
+	private WebElement courseCatalog;
+
+	public void clickCourseCatalogBtn() {
+		this.courseCatalog.click();
+	}
+	
+	//26.Enter course name to register in search textbox
+	@FindBy(xpath = "//input[@name='search_term']")
+	private WebElement searchCourseName;
+
+	public void sendSearchCourseName(String searchCourseName) {
+		this.searchCourseName.clear();
+		this.searchCourseName.sendKeys(searchCourseName);
+	}
+	
+	//27. click on search button
+	@FindBy(xpath = "//button[@type='submit']")
+	private WebElement searchBtn;
+
+	public void clickSearchBtn() {
+		this.searchBtn.click();
+	}
+	
+	//28. Click on Subscribe button of the course to get registered
+	@FindBy(xpath = "//a[@title='Subscribe']")
+	private WebElement subscribeBtn;
+
+	public void clickSubscribeBtn() {
+		this.subscribeBtn.click();
+	}
+	
+	//29. Click on Course Introduction icon
+	@FindBy(xpath = "//a[contains(text(),'Rashminewcourse1g')]")
+	private WebElement subscribedCourseBtn;
+
+	public void clickSubscribedCourseBtn() {
+		this.subscribedCourseBtn.click();
+	}
+	//There is no Course Introduction icon
+	
+	
+	//30.Click on Course Description icon
+	@FindBy(xpath = "//a[@id='istooldesc_1153']")
+	private WebElement courseDescriptionBtn;
+
+	public void clickcourseDescriptionBtn() {
+		this.courseDescriptionBtn.click();
+	}
+	
+	//31. Click on Course Objective icon - There is no Course Objective icon
+	
+	//32. Click on Course Topics icon - There is no Course Topics icon
+	
+	//33. Login as Admin
+		
+	//34. click on Reporting tab
+	@FindBy(xpath = "//a[@title='Reporting']")
+	private WebElement reportingBtn;
+
+	public void clickReportingBtn() {
+		this.reportingBtn.click();
+	}
+	
+	//35. click on Followed students link
+	@FindBy(xpath = "//a[contains(text(),'Followed students')]")
+	private WebElement followedStudentsBtn;
+
+	public void clickFollowedStudentsBtn() {
+		this.followedStudentsBtn.click();
+	}
+	
+	//36. enter student name in keyword textbox
+	@FindBy(xpath = " //input[@id='search_user_keyword']")
+	private WebElement studentNameSearch;
+
+	public void sendStudentNameSearch(String studentNameSearch) {
+		this.studentNameSearch.clear();
+		this.studentNameSearch.sendKeys(studentNameSearch);
+	}
+	
+	//37. click on search button
+	@FindBy(xpath = "//button[@id='search_user_submit']")
+	private WebElement searchBtnTwo;
+
+	public void clickSearchBtnTwo() {
+		this.searchBtnTwo.click();
+	}
+	
+	//38. click on >> icon of the student
+	@FindBy(xpath = "//img[@title='Details csm1']")
+	private WebElement iconOne;
+
+	public void clickIconOne() {
+		this.iconOne.click();
+	}
+	
+	//39. click on >> icon of the course
+	@FindBy(xpath = "/html[1]/body[1]/main[1]/section[1]/div[1]/div[3]/table[1]/tbody[1]/tr[1]/td[7]/a[1]/img[1]")
+	private WebElement iconTwo;
+
+	public void clickIconTwo() {
+		this.iconTwo.click();
 	}
 }

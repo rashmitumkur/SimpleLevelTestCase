@@ -259,9 +259,9 @@ public class ELTC_062POM {
 		@FindBy(id = "question_admin_form_questionName")
 		private WebElement questionNameTwo;
 
-		public void sendQuestionNameTwo(String questionName) {
+		public void sendQuestionNameTwo(String questionNameTwo) {
 			this.questionNameTwo.clear();
-			this.questionNameTwo.sendKeys(questionName);
+			this.questionNameTwo.sendKeys(questionNameTwo);
 		}
 		
 		//21. enter valid credentials in first option textbox
